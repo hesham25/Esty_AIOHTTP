@@ -97,10 +97,10 @@ async def main(urls):
 			await parse(html)
 
 
-'''
-urls = [f'https://www.etsy.com/search?q=mug&explicit=1&min={round((i/20),2)}&max={round(((i/20)+0.05),2)}&order=price_desc' for i in range(600)]
+
+categories_urls = [f'https://www.etsy.com/search?q=mug&explicit=1&min={round((i/20),2)}&max={round(((i/20)+0.05),2)}&order=price_desc' for i in range(600)]
 links = []
-for link in urls:
+for link in categories_urls:
 	for i in range(1,241):
 		links.append(f'{link}&page={i}&ref=pagination')
 print(len(links))
@@ -109,4 +109,4 @@ loop = asyncio.get_event_loop()
 loop.run_until_complete(main(links[1000:1100]))
 #loop.close()
 print(f'{time.time()-s :.2f}')
-'''
+
